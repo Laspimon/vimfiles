@@ -1,8 +1,8 @@
-set nocompatible
     " be iMproved, required
     " https://github.com/VundleVim/Vundle.vim#quick-start
     " See :help 'compatible' for the full story
     " http://superuser.com/questions/543317/what-is-compatible-mode-in-vim
+set nocompatible
 
 
 " ########################################
@@ -10,7 +10,7 @@ set nocompatible
 " ####################
     " https://realpython.com/blog/python/vim-and-python-a-match-made-in-
     "   heaven/#.Vi9-CN7uzXY.reddit
-filetype off                  " required
+filetype off
 
     " Set the runtimepath (rtp) to include Vundle and initialize.
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -46,8 +46,6 @@ call vundle#end()
 "execute pathogen#infect()
 
 
-
-
 " ########################################
 " #### Settings
 " ####################
@@ -59,7 +57,14 @@ set splitright
     " Line Numbering
 set nu
 
-
+    " http://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
+    " https://wiki.python.org/moin/Vim
+set modeline
+set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+    " Enable all Python syntax highlighting features
+let python_highlight_all = 1
+    " http://www.vim.org/scripts/script.php?script_id=974
+"Vim Python indent
 
 
 " ########################################
@@ -98,19 +103,6 @@ set cursorline
     " Show the matching part of the pair for [] {} and ()
 "set showmatch
 
-    " http://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
-    " https://wiki.python.org/moin/Vim
-set modeline
-set tabstop=4 expandtab shiftwidth=4 softtabstop=4
-    " Enable all Python syntax highlighting features
-let python_highlight_all = 1
-
-    " http://www.vim.org/scripts/script.php?script_id=974
-"Vim Python indent
-
-
-
-
 
 " ########################################
 " #### Layout
@@ -119,10 +111,6 @@ let python_highlight_all = 1
 "syntax enable
 "set background=dark
 "colorscheme solarized
-
-
-
-
 
 
 " ########################################
@@ -142,25 +130,23 @@ nnoremap <C-H> <C-W><C-H>
 
     " Get off my lawn
     " https://github.com/jridgewell/dotvim/blob/master/home/.vim/plugin/
-    "   settings/
-    " vim-getoffmylawn.vim
+    "   settings/vim-getoffmylawn.vim
 "nnoremap <Left>     :call system('say Hey, listen &')<CR>:echoerr "Use h"<CR>
 "nnoremap <Right>    :call system('say Watch out! &')<CR>:echoerr "Use l"<CR>
 "nnoremap <Up>       :call system('say Hey! &')<CR>:echoerr "Use k"<CR>
 "nnoremap <Down>     :call system('say Look! &')<CR>:echoerr "Use j"<CR>
+
+    " Normal Mode:
 nnoremap <Left>     :call system('afplay /Users/Lasper/navi/navi_hello.mp3 &')<CR>:echoerr "Use h"<CR>
 nnoremap <Right>    :call system('afplay /Users/Lasper/navi/navi_look.mp3 &')<CR>:echoerr "Use l"<CR>
 nnoremap <Up>       :call system('afplay /Users/Lasper/navi/navi_hey_listen.mp3 &')<CR>:echoerr "Use k"<CR>
 nnoremap <Down>     :call system('afplay /Users/Lasper/navi/navi_watch_out.mp3 &')<CR>:echoerr "Use j"<CR>
 
-" Insert Mode
+    " Insert Mode:
 inoremap <Left>     <Esc>:echoerr "Use h"<CR>i%<nop>
 inoremap <Right>    <Esc>:echoerr "Use l"<CR>i
 inoremap <Up>       <Esc>:echoerr "Use k"<CR>i 
 inoremap <Down>     <Esc>:echoerr "Use j"<CR>i
-
-
-
 
 
 " ########################################
@@ -171,8 +157,6 @@ inoremap <Down>     <Esc>:echoerr "Use j"<CR>i
 :inoremap <esc> <nop>
 
 
-
-
 " ########################################
 " #### Folding
 " ####################
@@ -181,12 +165,10 @@ set foldlevel=99
 let g:SimpylFold_docstring_preview=1
 
 
-
-
 " ########################################
 " #### File specific settings
 " ####################
-" au BufNewFile,BufRead *.py
+"au BufNewFile,BufRead *.py
     "   \ set tabstop=4
     "   \ set softtabstop=4
     "   \ set shiftwidth=4
@@ -194,14 +176,11 @@ let g:SimpylFold_docstring_preview=1
     "   \ set expandtab
     "   \ set autoindent
     "   \ set fileformat=unix
-" 
-" au BufNewFile,BufRead *.js, *.html, *.css
+ 
+"au BufNewFile,BufRead *.js, *.html, *.css
     "   \ set tabstop=2
     "   \ set softtabstop=2
     "   \ set shiftwidth=2
-
-
-
 
 
 " ########################################
@@ -211,8 +190,6 @@ let g:SimpylFold_docstring_preview=1
 " https://www.youtube.com/watch?v=9XrHk3xjYsw
 " ctrl t for open in tab
 " ctrl b for open in buffer
-"
-"
 
 
 " ########################################
@@ -231,26 +208,27 @@ nnoremap <leader>p :w<CR>:! xelatex main; open main.pdf<CR><CR>
 nnoremap <leader>o :w<CR>:! biber main<CR><CR>
 
 
-
-
 " ########################################
 " #### Buffers
 " ####################
-" http://vim.wikia.com/wiki/Easier_buffer_switching
-" leader-b to access buffer list.
+    " leader-b to access buffer list.
+    " http://vim.wikia.com/wiki/Easier_buffer_switching
 nnoremap <leader>b :buffers<CR>:buffer<Space>
-" tab completion menu (disabled tab-completion, since it removes tab function. fix: http://vim.wikia.com/wiki/Autocomplete_with_TAB_when_typing_words
-" set wildchar=<Tab> wildmenu wildmode=full
-" <C-a> to autocomplete command with all possible completions.
-" :bd cont<C-a> " deletes all buffers from content-directory.
-" :bd cont<Tab> " deletes a single tab, which can be specified by cycling through suggestions.
-" http://stackoverflow.com/questions/3155461/how-to-delete-multiple-buffers-in-vim
+    " Tab completion menu (disabled tab-completion, since it removes tab
+    " function. fix:
+    "   http://vim.wikia.com/wiki/Autocomplete_with_TAB_when_typing_words
+"set wildchar=<Tab> wildmenu wildmode=full
 
+    " <C-a> to autocomplete command with all possible completions.
+    " Deletes all buffers from content-directory.
+":bd cont<C-a>
 
+    " Deletes a single tab, which can be specified by cycling through
+    " suggestions.
+":bd cont<Tab> 
 
-
-
-
+    " http://stackoverflow.com/questions/3155461/how-to-delete-multiple-
+    "       buffers-in-vim
 
 
 " ########################################
@@ -280,11 +258,6 @@ nnoremap <silent><leader>' V"xy:call system('say -v Ting '.shellescape(@x).' &')
     "   ManPages/man1/say.1.html
     " -v voice (Alex, Magnus, Ting)
     " -r rate (in words per minute, max 720)
-
-
-
-
-
 
 
 " ########################################
@@ -317,30 +290,27 @@ endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 
 
-
-
 " ########################################
 " #### r to replace in visual mode
 " ####################
-    " Press r in visual mode to replace current highlighted text with previously 
-    " yanked text.
+    " Press r in visual mode to replace current highlighted text with
+    " previously yanked text.
     " http://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-
     "     without-putting-text-in-the-register
 vmap r "_dP
 
 
-
-
-
-
 " ########################################
 " #### NERDTree
 " ####################
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+    " Ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$']
 nnoremap <silent><leader>nt :NERDTreeToggle<CR>
+
     " http://superuser.com/questions/334307/automatically-close-nerdtree-when-
     "     opening-file
 let NERDTreeQuitOnOpen = 1
+
     " Hide NERDTree when opening vim (feature of vim-nerdtree-tabs):
     " http://superuser.com/questions/491457/macvim-disable-nerdtree-for-new-
     "     and-single-files
