@@ -4,6 +4,10 @@
     " http://superuser.com/questions/543317/what-is-compatible-mode-in-vim
 set nocompatible
 
+    " Read this:
+    " https://realpython.com/blog/python/vim-and-python-a-match-made-in-
+    "       heaven/#.Vi9-CN7uzXY.reddit
+
 
 " ########################################
 " #### Vundle
@@ -25,9 +29,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
-
-    " Migration from pathogen
+Plugin 'kien/ctrlp.vim' " ctrl+p to search.
 Plugin 'tpope/vim-salve'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-fugitive'
@@ -61,10 +63,47 @@ set nu
     " https://wiki.python.org/moin/Vim
 set modeline
 set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+set fileformat=unix textwidth=79
+
     " Enable all Python syntax highlighting features
 let python_highlight_all = 1
     " http://www.vim.org/scripts/script.php?script_id=974
 "Vim Python indent
+
+    " https://www.cs.oberlin.edu/~kuperman/help/vim/indenting.html
+set autoindent
+set smartindent
+
+    " http://www.serverwatch.com/tutorials/article.php/3845506/Automatic-
+    "     Indenting-With-Vim.htm
+filetype indent on
+
+
+" ########################################
+" #### File specific settings
+" ####################
+"au BufNewFile,BufRead *.py
+    "   \ set tabstop=4
+    "   \ set softtabstop=4
+    "   \ set shiftwidth=4
+    "   \ set textwidth=79
+    "   \ set expandtab
+    "   \ set autoindent
+    "   \ set fileformat=unix
+ 
+"au BufNewFile,BufRead *.js, *.html, *.css
+    "   \ set tabstop=2
+    "   \ set softtabstop=2
+    "   \ set shiftwidth=2
+
+
+" ########################################
+" #### No clue
+" ####################
+" ctrl p:
+" https://www.youtube.com/watch?v=9XrHk3xjYsw
+" ctrl t for open in tab
+" ctrl b for open in buffer
 
 
 " ########################################
@@ -89,19 +128,16 @@ set hlsearch
     " http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-    " https://www.cs.oberlin.edu/~kuperman/help/vim/indenting.html
-set autoindent
-set smartindent
-
-    " http://www.serverwatch.com/tutorials/article.php/3845506/Automatic-
-    "     Indenting-With-Vim.htm
-filetype indent on
-
     " Show a visual line under the cursor's current line 
     " http://www.fullstackpython.com/vim.html
 set cursorline
     " Show the matching part of the pair for [] {} and ()
 "set showmatch
+
+    " Flag extra whitespace
+    " https://realpython.com/blog/python/vim-and-python-a-match-made-in-
+    "       heaven/#.Vi9-CN7uzXY.reddit
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " ########################################
@@ -162,34 +198,12 @@ inoremap <Down>     <Esc>:echoerr "Use j"<CR>i
 " ####################
 set foldmethod=indent
 set foldlevel=99
+    " Pro Tip: Want to see the docstrings for folded code?
+    " https://realpython.com/blog/python/vim-and-python-a-match-made-
+    "       in-heaven/#.Vi9-CN7uzXY.reddit
 let g:SimpylFold_docstring_preview=1
-
-
-" ########################################
-" #### File specific settings
-" ####################
-"au BufNewFile,BufRead *.py
-    "   \ set tabstop=4
-    "   \ set softtabstop=4
-    "   \ set shiftwidth=4
-    "   \ set textwidth=79
-    "   \ set expandtab
-    "   \ set autoindent
-    "   \ set fileformat=unix
- 
-"au BufNewFile,BufRead *.js, *.html, *.css
-    "   \ set tabstop=2
-    "   \ set softtabstop=2
-    "   \ set shiftwidth=2
-
-
-" ########################################
-" #### No clue
-" ####################
-" ctrl p:
-" https://www.youtube.com/watch?v=9XrHk3xjYsw
-" ctrl t for open in tab
-" ctrl b for open in buffer
+    " Press space twice to fold.
+nnoremap <space><space> za
 
 
 " ########################################
