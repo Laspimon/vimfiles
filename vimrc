@@ -8,6 +8,14 @@ set nocompatible
     " https://realpython.com/blog/python/vim-and-python-a-match-made-in-
     "       heaven/#.Vi9-CN7uzXY.reddit
 
+    " http://superuser.com/questions/132029/how-do-you-reload-your-vimrc-
+    "       file-without-restarting-vim
+    "    source current file:
+    " :so %
+    "    source vimrc
+    " :so $MYVIMRC
+nnoremap rl :so $MYVIMRC
+
 
 " ########################################
 " #### Vundle
@@ -63,7 +71,10 @@ set nu
     " https://wiki.python.org/moin/Vim
 set modeline
 set tabstop=4 expandtab shiftwidth=4 softtabstop=4
-set fileformat=unix textwidth=79
+set fileformat=unix
+    " Automatic newlines
+    " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+"textwidth=79
 
     " Enable all Python syntax highlighting features
 let python_highlight_all = 1
@@ -91,10 +102,31 @@ filetype indent on
     "   \ set autoindent
     "   \ set fileformat=unix
  
-"au BufNewFile,BufRead *.js, *.html, *.css
+    " Auto close brackets in web files
+    " http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
+    " No space allowed between file types.
+":au FileType html inoremap { {<esc>o}<esc>ko
+:autocmd BufNewFile,BufRead *.js,*.html,*.css
+        \ inoremap { {<esc>o}<esc>ko
+    " Auto close script tags
+:autocmd BufNewFile,BufRead *.js,*.html,*.css
+        \ inoremap <leader>s <script><esc>o</script><esc>k$a
     "   \ set tabstop=2
     "   \ set softtabstop=2
     "   \ set shiftwidth=2
+    " Auro close brackets
+    " http://vim.wikia.com/wiki/Automatically_append_closing_characters
+
+    " Autoindent html
+    " http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
+:autocmd BufRead *.html :normal gg=G
+
+    " leader c comments out in normal mode
+    " http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
+:autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+:autocmd FileType html       nnoremap <buffer> <localleader>c I//<esc>
+:autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+
 
 
 " ########################################
@@ -137,7 +169,7 @@ set cursorline
     " Flag extra whitespace
     " https://realpython.com/blog/python/vim-and-python-a-match-made-in-
     "       heaven/#.Vi9-CN7uzXY.reddit
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " ########################################
@@ -248,11 +280,11 @@ nnoremap <leader>b :buffers<CR>:buffer<Space>
 " ########################################
 " #### Speak
 " ####################
-vnoremap <silent><leader>[ "xy:call system('say -v Alex -r 500 '.shellescape(@x).' &')<CR>
+vnoremap <silent><leader>[ "xy:call system('say -v Alex -r 400 '.shellescape(@x).' &')<CR>
 vnoremap <silent><leader>] "xy:call system('say -v Magnus -r 400 '.shellescape(@x).' &')<CR>
 vnoremap <silent><leader>' "xy:call system('say -v Ting '.shellescape(@x).' &')<CR>
 
-nnoremap <silent><leader>[ V"xy:call system('say -v Alex -r 500 '.shellescape(@x).' &')<CR>
+nnoremap <silent><leader>[ V"xy:call system('say -v Alex -r 300 '.shellescape(@x).' &')<CR>
 nnoremap <silent><leader>] V"xy:call system('say -v Magnus -r 400 '.shellescape(@x).' &')<CR>
 nnoremap <silent><leader>' V"xy:call system('say -v Ting '.shellescape(@x).' &')<CR>
 "nnoremap <silent><leader>] :call system('say '.shellescape(expand('<cword>')).' &')<CR>
@@ -329,4 +361,18 @@ let NERDTreeQuitOnOpen = 1
     " http://superuser.com/questions/491457/macvim-disable-nerdtree-for-new-
     "     and-single-files
 let g:nerdtree_tabs_open_on_gui_startup = 0
+
+
+" ########################################
+" #### Spell checking
+" ####################
+" http://www.tjansson.dk/2008/10/writing-large-latex-documents-in-vim/
+if v:version >= 700
+    "Sets in-line spellchecking
+    "set spell
+ 
+    " Set local language 
+    "setlocal spell spelllang=en_us
+    "setlocal spell spelllang=da
+endif
 
