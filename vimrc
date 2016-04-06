@@ -44,6 +44,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-dispatch'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Laspimon/vim-python-test-runner'
 
     " All of your Plugins must be added before the following line
 call vundle#end()
@@ -376,3 +377,20 @@ if v:version >= 700
     "setlocal spell spelllang=da
 endif
 
+
+" ########################################
+" #### vim-python-test-runner
+" ####################
+" http://stackoverflow.com/questions/15223768/how-to-run-django-unit-tests-within-vim
+" https://github.com/JarrodCTaylor/vim-python-test-runner
+
+" DjangoTestApp:          Run all tests for the current app
+" DjangoTestFile:         Run all tests in the current file
+" DjangoTestClass:        Run all tests in the current class
+" DjangoTestMethod:       Run test for the current method
+" NosetestFile:           Run all tests for the current file
+" NosetestClass:          Run all tests in the current class
+" NosetestMethod:         Run the current test method (inside of a class)
+" NosetestBaseMethod:     Run the current test method (outside of a class)
+" RerunLastTests:         Rerun the last tests
+nnoremap <leader>t :NosetestFile<CR>
