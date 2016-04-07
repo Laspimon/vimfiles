@@ -49,6 +49,12 @@ Plugin 'Laspimon/vim-python-test-runner'
     " All of your Plugins must be added before the following line
 call vundle#end()
 
+" Open this file in split
+nnoremap <leader>ss :sp ~/.vim/vimrc<cr>
+" Source this file
+nnoremap <leader>s :source ~/.vim/vimrc<cr>
+" Git add; Git commit
+nnoremap <leader>g :Gwrite<cr>:Gcommit<cr>
 
 " ########################################
 " #### Pathogen
@@ -394,3 +400,4 @@ endif
 " NosetestBaseMethod:     Run the current test method (outside of a class)
 " RerunLastTests:         Rerun the last tests
 nnoremap <leader>t :NosetestFile<CR>
+nnoremap <leader>y :NosetestClass<CR>
