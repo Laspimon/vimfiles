@@ -22,6 +22,9 @@ nnoremap rl :so $MYVIMRC
 " ####################
     " https://realpython.com/blog/python/vim-and-python-a-match-made-in-
     "   heaven/#.Vi9-CN7uzXY.reddit
+    " This is required for Vundle, but makes the git commit fail.
+    " git config --global core.editor $(which vim) should fix it.
+    " https://github.com/VundleVim/Vundle.vim/issues/167
 filetype off
 
     " Set the runtimepath (rtp) to include Vundle and initialize.
