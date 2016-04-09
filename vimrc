@@ -133,6 +133,7 @@ filetype indent on
 :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
 :autocmd FileType html       nnoremap <buffer> <localleader>c I//<esc>
 :autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+:autocmd FileType text        nnoremap <buffer> <localleader>c I#\t\t<esc>
 
 
 
@@ -291,7 +292,7 @@ vnoremap <silent><leader>[ "xy:call system('say -v Alex -r 400 '.shellescape(@x)
 vnoremap <silent><leader>] "xy:call system('say -v Magnus -r 400 '.shellescape(@x).' &')<CR>
 vnoremap <silent><leader>' "xy:call system('say -v Ting '.shellescape(@x).' &')<CR>
 
-nnoremap <silent><leader>[ V"xy:call system('say -v Alex -r 300 '.shellescape(@x).' &')<CR>
+nnoremap <silent><leader>[ V"xy:call system('say -v Alex -r 400 '.shellescape(@x).' &')<CR>
 nnoremap <silent><leader>] V"xy:call system('say -v Magnus -r 400 '.shellescape(@x).' &')<CR>
 nnoremap <silent><leader>' V"xy:call system('say -v Ting '.shellescape(@x).' &')<CR>
 "nnoremap <silent><leader>] :call system('say '.shellescape(expand('<cword>')).' &')<CR>
