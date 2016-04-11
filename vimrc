@@ -405,3 +405,11 @@ endif
 " RerunLastTests:         Rerun the last tests
 nnoremap <leader>t :NosetestFile<CR>
 nnoremap <leader>y :NosetestClass<CR>
+
+
+" ########################################
+" #### Status line
+" ####################
+" http://vim.wikia.com/wiki/Displaying_status_line_always
+:set laststatus=2
+:set ruler
