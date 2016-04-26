@@ -405,7 +405,7 @@ endif
 " RerunLastTests:         Rerun the last tests
 nnoremap <leader>t :NosetestFile<CR>
 nnoremap <leader>y :NosetestClass<CR>
-
+nnoremap <leader>tt :NosetestMethod<CR>
 
 " ########################################
 " #### Status line
