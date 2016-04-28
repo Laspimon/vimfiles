@@ -1,6 +1,12 @@
 :autocmd FileType text        set spell
 :autocmd FileType tex         set spell
 
+" Tired? Reddit is only a keystroke away!
+fu! LunchBreak()
+    call system('open -a "Google Chrome" "http://reddit.com"')
+endf
+nnoremap <silent><leader>l :call LunchBreak()
+
 " https://spontaneousderivation.com/2009/06/26/live-word-count-in-vim/
 "
 "-------------- word count ---------------
