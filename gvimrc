@@ -18,7 +18,7 @@ fu! OtherLineWordCount()
         let data = data + getline(line(".")+1, "$")
     endif
     let count_words = 0
-    let pattern = "\s"
+    let pattern = " "
     for str in data
         let count_words = count_words + NumPatternsInString(str, pattern)
     endfor
@@ -35,7 +35,7 @@ fu! CurrentLineWordCount()
     endif
     "calculate number of words on current line
     let line = getline(".")
-    let pattern = "\s"
+    let pattern = " "
     let count_words = NumPatternsInString(line, pattern)
     let b:Current_Line_Word_Count = count_words "update buffer variable with current line count
     if b:Current_Line_Number != line(".") "if the line number has changed then subtract current line count
