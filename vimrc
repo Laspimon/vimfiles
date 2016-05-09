@@ -48,6 +48,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-dispatch'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Laspimon/vim-python-test-runner'
+Plugin 'scrooloose/syntastic'
 
     " All of your Plugins must be added before the following line
 call vundle#end()
