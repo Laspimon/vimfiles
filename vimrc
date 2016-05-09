@@ -49,6 +49,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Laspimon/vim-python-test-runner'
 Plugin 'scrooloose/syntastic'
+Plugin 'OmniSharp/omnisharp-vim'
 
     " All of your Plugins must be added before the following line
 call vundle#end()
@@ -414,3 +415,17 @@ nnoremap <leader>tt :NosetestMethod<CR>
 " http://vim.wikia.com/wiki/Displaying_status_line_always
 :set laststatus=2
 :set ruler
+
+
+
+" Syntastic setup
+" https://github.com/scrooloose/syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
