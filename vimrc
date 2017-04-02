@@ -48,7 +48,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-dispatch'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Laspimon/vim-python-test-runner'
-Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic' " Showing pylint output in vim.
 Plugin 'OmniSharp/omnisharp-vim'
 
     " All of your Plugins must be added before the following line
@@ -439,4 +439,8 @@ set path+=**
 
 " Tab select files (:b uniquesubstring)
 set wildmenu
+
+" Syntactic to allow vertical bars in tex.
+" http://stackoverflow.com/questions/28282315/how-can-i-turn-off-specific-messages-in-syntastic-vim
+let g:syntastic_quiet_messages = { "regex": 'Vertical rules in tables are ugly'}
 
