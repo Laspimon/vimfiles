@@ -430,3 +430,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
+let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
+
+" https://www.reddit.com/r/vim/comments/57ps0k/how_to_do_90_of_what_plugins_do_with_just_vim/
+" Fuzzy Search (find searchdir/*/*/file.txt)
+set path+=**
+
+" Tab select files (:b uniquesubstring)
+set wildmenu
+
