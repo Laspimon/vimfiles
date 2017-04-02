@@ -261,7 +261,8 @@ nnoremap <leader>, /,<CR>wi<CR><Esc>
 nnoremap <leader>m /\.<CR>wi<CR><Esc>
 
     " \p to latex compile main.tex and open main.pdf.
-nnoremap <leader>p :w<CR>:! xelatex %; open %:r.pdf<CR><CR>
+nnoremap <leader>p :w<CR>:! make<CR><CR>
+" nnoremap <leader>p :w<CR>:! xelatex %; open %:r.pdf<CR><CR>
 
     " \o to recompile biber bibliography.
 nnoremap <leader>o :w<CR>:! biber main<CR><CR>
