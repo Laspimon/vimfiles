@@ -198,10 +198,16 @@ set cursorline
 " #### Navigation
 " ####################
     " Split navigations: ctrl+hjkl
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+    " http://vi.stackexchange.com/questions/3119/mapping-control-h-in-insert-mode-doesnt-work-it-always-works-like-backspace?rq=1
+    " This should work are you expect, with the obvious downside that you've now lost your backspace key.
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>jj <C-W><C-J>
+nnoremap <leader>jk <C-W><C-K>
+nnoremap <leader>jl <C-W><C-L>
+nnoremap <leader>jh <C-W><C-H>
 
 
 " ########################################
