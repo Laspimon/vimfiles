@@ -462,3 +462,7 @@ let g:syntastic_quiet_messages = { "regex": 'Vertical rules in tables are ugly'}
 " diffobtain do
 " diffput
 " Gread, Gwrite
+
+" Use Ctrl-c to copy to the system's register
+" http://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard
+vnoremap <C-c> "*y<Esc>:echo "Use \"*y"<CR>
