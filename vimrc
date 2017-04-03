@@ -50,6 +50,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Laspimon/vim-python-test-runner'
 Plugin 'scrooloose/syntastic' " Showing pylint output in vim.
 Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'HerringtonDarkholme/yats.vim'
 
     " All of your Plugins must be added before the following line
 call vundle#end()
