@@ -450,3 +450,13 @@ set wildmenu
 " http://stackoverflow.com/questions/28282315/how-can-i-turn-off-specific-messages-in-syntastic-vim
 let g:syntastic_quiet_messages = { "regex": 'Vertical rules in tables are ugly'}
 
+" Learn vimdiff
+" http://media.vimcasts.org/videos/32/fugitive_2.ogv
+" When diff gets confused, run :diffupdate
+" :Gstatus
+" ctrl+n ctrl+p to jump between files in status window
+" Minus (-) to stage/unstage
+" diffget
+" diffobtain do
+" diffput
+" Gread, Gwrite
