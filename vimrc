@@ -465,4 +465,9 @@ let g:syntastic_quiet_messages = { "regex": 'Vertical rules in tables are ugly'}
 
 " Use Ctrl-c to copy to the system's register
 " http://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard
-vnoremap <C-c> "*y<Esc>:echo "Use \"*y"<CR>
+vnoremap <C-c> "*y<Esc>:echo "Use \"*y to copy and \"+p to paste"<CR>
+
+" Open .html-version of a file in chrome 
+"   https://jbernard.io/2011/09/30/vim-makeprg.html
+nnoremap <leader>v :!open %<.html<CR><CR>
+
