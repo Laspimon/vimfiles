@@ -266,9 +266,9 @@ nnoremap <space><space> za
 nnoremap <leader>, /,<CR>wi<CR><Esc>
 
     " \. to insert a newline following next period.
-nnoremap <leader>m /\.<CR>wi<CR><Esc>
 
     " \p to latex compile main.tex and open main.pdf.
+nnoremap <leader>m :w<CR>:! make<CR><CR>
 nnoremap <leader>p :w<CR>:! make<CR><CR>
 " nnoremap <leader>p :w<CR>:! xelatex %; open %:r.pdf<CR><CR>
 
