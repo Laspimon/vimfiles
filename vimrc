@@ -120,10 +120,10 @@ filetype indent on
     " http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
     " No space allowed between file types.
 ":au FileType html inoremap { {<esc>o}<esc>ko
-:autocmd BufNewFile,BufRead *.js, *.html, *.css, *.ts
+:autocmd BufNewFile,BufRead *.js,*.html,*.css,*.ts
         \ inoremap { {<esc>o}<esc>ko
     " Auto close script tags
-:autocmd BufNewFile,BufRead *.js, *.html, *.css, *.ts
+:autocmd BufNewFile,BufRead *.js,*.html,*.css,*.ts
         \ inoremap <leader>s <script><esc>o</script><esc>k$a
     "   \ set tabstop=2
     "   \ set softtabstop=2
