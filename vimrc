@@ -474,3 +474,6 @@ nnoremap <leader>v :!open %<.html<CR><CR>
 
 " https://www.youtube.com/watch?v=v1NuzPpXFfM#t=01m55s
 nnoremap <leader>b :call system('tmux send-keys -t bottom make C-m')<CR>
+
+" http://vim.wikia.com/wiki/Backspace_and_delete_problems
+set backspace=indent,eol,start
