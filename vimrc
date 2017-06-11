@@ -477,3 +477,11 @@ nnoremap <leader>b :call system('tmux send-keys -t bottom make C-m')<CR>
 
 " http://vim.wikia.com/wiki/Backspace_and_delete_problems
 set backspace=indent,eol,start
+
+" https://stackoverflow.com/questions/563616/vim-and-ctags-tips-and-tricks
+" Open the definition in a new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" Open the definition in a vertical split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" When looking for Ctags, work your way upwards towards the root.
+set tags=./tags;/
