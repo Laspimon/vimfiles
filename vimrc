@@ -56,6 +56,8 @@ Plugin 'HerringtonDarkholme/yats.vim'
     " All of your Plugins must be added before the following line
 call vundle#end()
 
+colorscheme solarized
+
 " Open this file in split
 nnoremap <leader>ss :sp ~/.vim/vimrc<cr>
 " Source this file
