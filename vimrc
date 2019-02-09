@@ -49,7 +49,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Laspimon/vim-python-test-runner'
 Plugin 'scrooloose/syntastic' " Showing pylint output in vim.
-Plugin 'OmniSharp/omnisharp-vim'
+"Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'HerringtonDarkholme/yats.vim'
 

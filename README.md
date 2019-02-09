@@ -3,7 +3,7 @@ Vim configuration files.
 
 ## Install
 ```
-git clone https://github.com/Laspimon/vimfiles.git ~/.vimfiles
+git clone https://github.com/CasperLehmann/vimfiles.git ~/.vimfiles
 cd ~/.vimfiles
 ./install.sh
 ```
